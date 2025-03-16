@@ -1,0 +1,72 @@
+.discord_label {
+    transition: all 0.5s;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    
+    svg {
+        transition: all 0.5s;
+        vertical-align: middle;
+        color: white;
+        height: 28px;
+        width: 28px;      
+        
+    }
+}
+.discord_label:hover {
+    color: var(--accent-color);
+    svg {
+        color: #7289da;
+    }
+}
+.discord_sector {
+    padding: 1rem;
+    text-align: center;
+}
+.discord_status {
+    text-align: left;
+    padding-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.discord_avatar {
+    height: 4rem;
+    border-radius: 100%;
+    border: 3px solid #287e29f0;
+}
+.discord_info {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding-left: 1rem;
+}
+.discord_name {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+.discord_activity {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.discord_activity_img {
+    height: 3rem;
+    border-radius: 20%;
+}
+
+.discord_activity_info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.5rem;
+}
+
+.discord_activity_name {
+font-size: 1.2rem;
+}
+
+.discord_activity_time {   
+    color: #2dcf48;
+    padding-left: 0.5rem;
+}

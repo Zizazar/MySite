@@ -1,0 +1,156 @@
+@font-face{
+    font-family: Supercell Magic;
+    src: url('../fonts/Supercell-Magic.ttf');
+    font-weight: bold;}
+
+
+:root {
+    --accent-color: #35e64d;
+    --dark-color: #cfcfcf;
+    --border-color: #ffffff30;
+}
+
+.border {
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+}
+
+hr {
+    color: var(--border-color);
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+header {
+    height: 50px;
+    display: flex;
+}
+
+main {
+    flex: auto;
+    display: grid;
+    margin-top: 1rem;
+    grid-template-columns: 1fr 20%;
+
+    grid-template-rows: 1fr;
+
+    gap: 10px 10px;
+}
+
+
+footer {
+    height: 25px;
+    
+}
+
+.sidebar {
+    
+    width: 100%;
+    height: 100%;
+}
+
+.site_title {
+    font-size: 32px;
+    padding-left: 2rem;
+    align-self: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    padding-right: 1rem;
+    align-self: center;
+}
+
+.link_img {
+    
+    width: 32px;
+    height: 32px;
+    
+}
+
+.link {
+    transition: all 0.5s;
+    color: white;
+    padding: 0.4rem;
+}
+
+.link_discord:hover {
+    color: #7289da;
+}
+
+.link_telegram:hover {
+    color: #24a1de;
+}
+.link_steam:hover {
+    color: #4277a3;
+}
+.link_github:hover {
+    color: #8250DF;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+}
+
+.about_text {
+    color: var(--accent-color);
+    font-size: 23px;
+
+}
+.about_desc {
+    color: var(--dark-color);
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.title {
+    font-size: 24px;
+    font-family: "Supercell Magic";
+    
+}
+
+.projects_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 10px 10px;
+
+    padding-top: 1rem;
+}
+.project_item {
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+}
+.project_name {
+    font-size: 20px;
+    padding: 0.4rem;
+}
+.project_started {
+    font-size: 14px;
+    padding-left: 0.4rem;
+    color: var(--dark-color);
+}
+.project_desc {
+    font-size: 16px;
+    padding: 0.4rem;
+}
