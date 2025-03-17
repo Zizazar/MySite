@@ -6,7 +6,8 @@
 
 :root {
     --accent-color: #35e64d;
-    --dark-color: #cfcfcf;
+    --accent2-color: #cc03cc;
+    --dark-color: #a0a0a0;
     --border-color: #ffffff30;
 }
 
@@ -24,6 +25,7 @@ html {
     width: 100%;
     padding: 0;
     margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -144,6 +146,7 @@ footer {
 .project_name {
     font-size: 20px;
     padding: 0.4rem;
+    color: var(--accent2-color);
 }
 .project_started {
     font-size: 14px;
@@ -153,4 +156,30 @@ footer {
 .project_desc {
     font-size: 16px;
     padding: 0.4rem;
+}
+
+.languages_list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-top: 1rem;
+}
+
+.language_item {
+    padding: 0.6rem;
+    max-width: fit-content;
+    max-height: fit-content;
+}
+.language_name {
+    vertical-align: middle;
+}
+.language_icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.language_time {
+    vertical-align: middle;
+    color: var(--dark-color);
+    padding-left: 0.5rem;
 }

@@ -30,12 +30,31 @@
     display: flex;
     flex-direction: row;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    max-width: 20rem;
 }
+
 .discord_avatar {
     height: 4rem;
     border-radius: 100%;
-    border: 3px solid #287e29f0;
+    border: 3px solid #0000;
 }
+
+.discord_status_online {
+    border-color: #287e29f0;
+}
+
+.discord_status_offline {
+    border-color: #6b6b6bf0;
+}
+
+.discord_status_idle {
+    border-color: #ccb63cf0;
+}
+
+.discord_status_dnd {
+    border-color: #7e2828f0;
+}
+
 .discord_info {
     display: flex;
     width: 100%;
@@ -46,14 +65,20 @@
     font-size: 1.8rem;
     letter-spacing: 1px;
 }
+.discord_activities {
+    display: flex;
+    flex-direction: column;
+}
 .discord_activity {
     width: 100%;
     display: flex;
     flex-direction: row;
+    padding: 0.4rem;
 }
 .discord_activity_img {
     height: 3rem;
     border-radius: 20%;
+
 }
 
 .discord_activity_info {
@@ -69,4 +94,7 @@ font-size: 1.2rem;
 .discord_activity_time {   
     color: #2dcf48;
     padding-left: 0.5rem;
+}
+.discord_activity_state, .discord_activity_details {
+    color: var(--dark-color);
 }
