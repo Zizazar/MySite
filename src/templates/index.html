@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/icons.css') }}">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/0x5841524f4e/js-lanyard/lanyard.js"></script>
+
+    {{ moment.include_moment() }}
 </head>
 
 <body>
@@ -38,53 +39,80 @@
         <div class="content">
             <p class="about">
                 <span class="about_text">Hello! I'm Zizazr</span>
-                <span class="about_desc">I'am 17 years old developer who likes to explore interesting technologies and projects.</span>
+                <span class="about_desc">I'am 17 years old developer who likes to explore interesting technologies and projects. <br> Own a <a1>Minecraft server</a1>, host it, and create mods. <br> Sometimes making space-related games. <br> Love playing with <a1>VR</a1>. </span>
             </p>
             <hr>
             <div id="Projects">
                 <span class="title">Projects</span>
                 <div class="projects_list">
+                    {% for project in content.projects %}
                     <div class="project_item border">
-                        <span class="project_name">Floppa Land test</span>
-                        <span class="project_started">Started at: 21.02.2022</span>
-                        <span class="project_desc">A Minecraft project with lots of mods and custom content. There is also a launcher based on Gravit Launcher.</span>
+                        <div class="project_header">
+                            <span class="project_name">{{project.name}}</span>
+                            <div class="project_links">
+                                {% for link in project.links %}
+                                <a href="{{ link.url }}" class="project_link">{{ icon(link.icon, class="project_link_icon") }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <span class="project_started">Started at: {{project.start_time}}</span>
+                        <span class="project_desc">{{project.desc|safe}}</span>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
             <hr>
             <div id="Languages">
+                <script>
+                    moment.locale('en')
+                </script>
                 <span class="title">Languages</span>
                 <div class="languages_list">
-                    <div class="language_item border">
-                        {{ icon("python", class="language_icon") }}
-                        <span class="language_name">Python</span>
-                        <span class="language_time">3 years</span>
+                    {% for lang in content.languages %}
+                    <div class="language_item border rang_{{ lang.rang }}">
+                        {{ icon(lang.icon, class="language_icon") }}
+                        <span class="language_name">{{ lang.name }}</span>
+                        <span class="language_time">{{ moment(lang.start_time).fromNow(true) }}</span>
                     </div>
-                    <div class="language_item border">
-                        {{ icon("java", class="language_icon") }}
-                        <span class="language_name">Java</span>
-                        <span class="language_time">1 mounth</span>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
-
+            <hr>
+            <div id="Tools">
+                <script>
+                    moment.locale('en')
+                </script>
+                <span class="title">Tools / Frameworks</span>
+                <div class="languages_list">
+                    {% for tool in content.tools %}
+                    <div class="language_item border rang_{{ tool.rang }}">
+                        {{ icon(tool.icon, class="language_icon") }}
+                        <span class="language_name">{{ tool.name }}</span>
+                        <span class="language_time">{{ moment(tool.start_time).fromNow(true) }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
         <script>
+            https://demo.useapi.net/discord-cdn-proxy/?https://cdn.discordapp.com/attachments/1239264794394234985/1239266735992078447/vault_boy.png?ex=66424c96&is=6640fb16&hm=0b3d3210b4ea0916d5c8c0b2d998a4f4b64f5b95b79cdb9b58ff96b8287dace4&
             lanyard({
                 userId: "669963214544437278",
                 socket: true,
                 onPresenceUpdate: update_discord_data // presenceData
             })
 
+            const DISCORD_CDN_BASE = "https://cdn.discordapp.com"
+
             function update_discord_data(data) {
                 $(".discord_name").text(data.discord_user.display_name)
                 $(".discord_avatar")
-                    .attr('src', `https://cdn.discordapp.com/avatars/${data.discord_user.id}/${data.discord_user.avatar}` )
+                    .attr('src', `${DISCORD_CDN_BASE}/avatars/${data.discord_user.id}/${data.discord_user.avatar}` )
                     .attr('class', "discord_avatar discord_status_"+ data.discord_status)
                 $(".discord_activities").empty()
                 data.activities.forEach(activity => {
                     $(".discord_activities").append($("<div>").addClass('discord_activity border').append(
-                        $("<img>").addClass('discord_activity_img').attr('src', `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.png`),
+                        $("<img>").addClass('discord_activity_img').attr('src', `${DISCORD_CDN_BASE}/app-assets/${activity.application_id}/${activity.assets.large_image}.png`),
                         $("<div>").addClass('discord_activity_info').append(
                             $("<span>").addClass("discord_activity_name").text(activity.name),
                             $("<span>").addClass('discord_activity_details').text(activity.details),
@@ -105,7 +133,6 @@
                 }, 1000)
             }
 
-            
         </script>
         <div class="sidebar">
             <div class="discord_sector border">

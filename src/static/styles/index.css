@@ -6,7 +6,8 @@
 
 :root {
     --accent-color: #35e64d;
-    --accent2-color: #cc03cc;
+    --accent2-color: #a447e2;
+    --accent3-color: linear-gradient(160deg, rgba(245,194,88,1) 0%, rgba(219,122,43,1) 65%, rgba(209,96,22,1) 100%);
     --dark-color: #a0a0a0;
     --border-color: #ffffff30;
 }
@@ -14,6 +15,21 @@
 .border {
     border: 2px solid var(--border-color);
     border-radius: 10px;
+}
+a1 {
+    font-weight: bold;
+    background-image: var(--accent3-color);
+    color: transparent;
+    background-clip: text;
+}
+.l {
+    text-decoration: none;
+    font-weight: bold;
+    color: #2e83d3;
+    transition: all 0.5s;
+}
+.l:hover {
+    color: #69b0f1;
 }
 
 hr {
@@ -145,6 +161,7 @@ footer {
 }
 .project_name {
     font-size: 20px;
+    font-weight: bold;
     padding: 0.4rem;
     color: var(--accent2-color);
 }
@@ -156,6 +173,27 @@ footer {
 .project_desc {
     font-size: 16px;
     padding: 0.4rem;
+}
+.project_header {
+    height: fit-content;
+    display: flex;
+}
+
+.project_links {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+}
+.project_link_icon {
+    width: 30px;
+    height: 30px;
+    color: white;
+    padding: 0.6rem;
+
+    transition: all 0.2s;
+}
+.project_link_icon:hover {
+    scale: 1.2;
 }
 
 .languages_list {
@@ -174,12 +212,25 @@ footer {
     vertical-align: middle;
 }
 .language_icon {
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
     vertical-align: middle;
 }
 .language_time {
     vertical-align: middle;
     color: var(--dark-color);
     padding-left: 0.5rem;
+}
+
+.rang_bad {
+    border-color: #803737;
+}
+.rang_middle {
+    border-color: #9b994c;
+}
+.rang_good {
+    border-color: #37803d;
+}
+.rang_excellent {
+    border-color: #499b50;
 }

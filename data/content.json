@@ -1,0 +1,81 @@
+{
+    "discord_id": "",
+    "projects": [
+        {
+            "name": "Floppa Land",
+            "start_time": "21.02.2022",
+            "desc": "A <a1>Minecraft</a1> project with lots of mods and custom content. There is also a launcher based on <a href='https://gravitlauncher.com/' class='l'>Gravit Launcher</a>.",
+            "links": [
+                {"icon": "github", "url": "https://github.com/FloppaLand"},
+                {"icon": "fl_mini", "url": "https://floppaland.fun"}
+            ]
+        }
+    ],
+
+    "languages": [{
+        "name": "Python",
+        "icon": "python",
+        "rang": "excellent",
+        "start_time": "2021-08-05"
+    },{
+        "name": "Java",
+        "icon": "java",
+        "rang": "bad",
+        "start_time": "2025-02-16"
+    },{
+        "name": "Lua",
+        "icon": "lua",
+        "rang": "middle",
+        "start_time": "2022-04-23"
+    },{
+        "name": "JavaScript",
+        "icon": "js",
+        "rang": "middle",
+        "start_time": "2022-04-23"
+    },{
+        "name": "C#",
+        "icon": "csharp",
+        "rang": "middle",
+        "start_time": "2022-04-23"
+    },{
+        "name": "SQL",
+        "icon": "csharp",
+        "rang": "bad",
+        "start_time": "2024-08-01"
+    }],
+
+    "tools": [{
+        "name": "Flask",
+        "rang": "good",
+        "start_time": "2024-03-28"
+    },{
+        "name": "Fast API",
+        "rang": "middle",
+        "start_time": "2024-03-01"
+    },{
+        "name": "blender",
+        "icon": "blender",
+        "rang": "bad",
+        "start_time": "2024-08-01"
+    },{
+        "name": "Unity",
+        "icon": "unity",
+        "rang": "good",
+        "start_time": "2023-01-04"
+    },{
+        "name": "Unreal Engine",
+        "icon": "ue",
+        "rang": "bad",
+        "start_time": "2022-03-01"
+    },{
+        "name": "Docker",
+        "icon": "docker",
+        "rang": "good",
+        "start_time": "2024-03-01"
+    },{
+        "name": "PostgreSQL",
+        "icon": "postgres",
+        "rang": "good",
+        "start_time": "2024-03-01"
+    }]
+}
