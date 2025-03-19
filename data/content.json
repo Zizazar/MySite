@@ -1,5 +1,10 @@
 {
-    "discord_id": "",
+    "bio": {
+        "title": "Hello! I'm Zizazr",
+        "desc": "I'am 17 years old developer who likes to explore interesting technologies and projects. <br> Own a <a1>Minecraft server</a1>, host it, and create mods. <br> Sometimes making space-related games. <br> Love playing with <a1>VR</a1>."
+    },
+    "discord_id": "669963214544437278",
+    "projects_title": "Projects",
     "projects": [
         {
             "name": "Floppa Land",
@@ -12,6 +17,7 @@
         }
     ],
 
+    "languages_title": "Languages",
     "languages": [{
         "name": "Python",
         "icon": "python",
@@ -43,7 +49,7 @@
         "rang": "bad",
         "start_time": "2024-08-01"
     }],
-
+    "tools_title": "Tools / Frameworks",
     "tools": [{
         "name": "Flask",
         "rang": "good",

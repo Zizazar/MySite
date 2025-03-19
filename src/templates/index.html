@@ -13,6 +13,7 @@
     <script src="https://cdn.jsdelivr.net/gh/0x5841524f4e/js-lanyard/lanyard.js"></script>
 
     {{ moment.include_moment() }}
+    {{ moment.locale(page_lang) }}
 </head>
 
 <body>
@@ -33,17 +34,17 @@
             <a href="https://github.com/Zizazar" class="link link_github">
                 {{ icon("github", class="link_img")}}
             </a>
-        </div>
-    </header>
+            s
+w    </header>
     <main>
         <div class="content">
             <p class="about">
-                <span class="about_text">Hello! I'm Zizazr</span>
-                <span class="about_desc">I'am 17 years old developer who likes to explore interesting technologies and projects. <br> Own a <a1>Minecraft server</a1>, host it, and create mods. <br> Sometimes making space-related games. <br> Love playing with <a1>VR</a1>. </span>
+                <span class="about_text">{{ content.bio.title }}</span>
+                <span class="about_desc">{{ content.bio.desc|safe }}</span>
             </p>
             <hr>
             <div id="Projects">
-                <span class="title">Projects</span>
+                <span class="title">{{ content.projects_title }}</span>
                 <div class="projects_list">
                     {% for project in content.projects %}
                     <div class="project_item border">
@@ -63,10 +64,7 @@
             </div>
             <hr>
             <div id="Languages">
-                <script>
-                    moment.locale('en')
-                </script>
-                <span class="title">Languages</span>
+                <span class="title">{{ content.languages_title }}</span>
                 <div class="languages_list">
                     {% for lang in content.languages %}
                     <div class="language_item border rang_{{ lang.rang }}">
@@ -79,10 +77,7 @@
             </div>
             <hr>
             <div id="Tools">
-                <script>
-                    moment.locale('en')
-                </script>
-                <span class="title">Tools / Frameworks</span>
+                <span class="title">{{ content.tools_title }}</span>
                 <div class="languages_list">
                     {% for tool in content.tools %}
                     <div class="language_item border rang_{{ tool.rang }}">
@@ -95,9 +90,8 @@
             </div>
         </div>
         <script>
-            https://demo.useapi.net/discord-cdn-proxy/?https://cdn.discordapp.com/attachments/1239264794394234985/1239266735992078447/vault_boy.png?ex=66424c96&is=6640fb16&hm=0b3d3210b4ea0916d5c8c0b2d998a4f4b64f5b95b79cdb9b58ff96b8287dace4&
             lanyard({
-                userId: "669963214544437278",
+                userId: "{{ content.discord_id }}",
                 socket: true,
                 onPresenceUpdate: update_discord_data // presenceData
             })

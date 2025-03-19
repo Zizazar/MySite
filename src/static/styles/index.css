@@ -10,6 +10,8 @@
     --accent3-color: linear-gradient(160deg, rgba(245,194,88,1) 0%, rgba(219,122,43,1) 65%, rgba(209,96,22,1) 100%);
     --dark-color: #a0a0a0;
     --border-color: #ffffff30;
+    --link-color: #2e83d3;
+    --link-hover-color: #69b0f1;
 }
 
 .border {
@@ -25,11 +27,11 @@ a1 {
 .l {
     text-decoration: none;
     font-weight: bold;
-    color: #2e83d3;
+    color: var(--link-color);
     transition: all 0.5s;
 }
 .l:hover {
-    color: #69b0f1;
+    color: var(--link-hover-color);
 }
 
 hr {
@@ -223,14 +225,14 @@ footer {
 }
 
 .rang_bad {
-    border-color: #803737;
+    border-color: #ff000080;
 }
 .rang_middle {
-    border-color: #9b994c;
+    border-color: #ffff0080;
 }
 .rang_good {
-    border-color: #37803d;
+    border-color: #44ff0080;
 }
 .rang_excellent {
-    border-color: #499b50;
+    border-color: #00ff2680;
 }

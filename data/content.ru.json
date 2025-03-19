@@ -1,0 +1,14 @@
+{
+    "bio": {
+        "title": "Hello! I'm Zizazr",
+        "desc": "I'am 17 years old developer who likes to explore interesting technologies and projects. <br> Own a <a1>Minecraft server</a1>, host it, and create mods. <br> Sometimes making space-related games. <br> Love playing with <a1>VR</a1>."
+    },
+    "projects_title": "Проекты",
+    "projects": [
+        {
+            "desc": "<a1>Minecraft</a1> проект с большим количеством модов и кастомного контента. Есть свой лаунчер на основе <a href='https://gravitlauncher.com/' class='l'>Gravit Launcher</a>."
+        }
+    ],
+    "languages_title": "Языки",
+    "tools_title": "Инструменты и фреймворки"
+}
