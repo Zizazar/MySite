@@ -124,6 +124,9 @@ footer {
 .link_github:hover {
     color: #8250DF;
 }
+.link_itch:hover {
+    color: #fa5c5c;
+}
 
 .about {
     display: flex;
@@ -228,11 +231,43 @@ footer {
     border-color: #ff000080;
 }
 .rang_middle {
-    border-color: #ffff0080;
+    border-color: #ffff0090;
 }
 .rang_good {
     border-color: #44ff0080;
 }
 .rang_excellent {
     border-color: #00ff2680;
+}
+
+.toggle_theme {
+    padding: 0.5rem;
+    align-items: center;
+}
+hr.vertical {
+    padding: 0;
+    margin: 0;
+    width: 0px;
+    height: 3rem;
+}
+
+.toggle_theme_img {
+    transition: all 0.2s;
+    font-size: 32px;
+}
+.toggle_theme_img:hover {
+    font-size: 32px;
+    color: #ecec92;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+.page_lang {
+    cursor: pointer;
+    color: var(--link-color);
+}
+.page_lang:hover {
+    color: var(--link-hover-color);
 }

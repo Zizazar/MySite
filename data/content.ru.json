@@ -1,7 +1,7 @@
 {
     "bio": {
-        "title": "Hello! I'm Zizazr",
-        "desc": "I'am 17 years old developer who likes to explore interesting technologies and projects. <br> Own a <a1>Minecraft server</a1>, host it, and create mods. <br> Sometimes making space-related games. <br> Love playing with <a1>VR</a1>."
+        "title": "Привет! Я Zizazr",
+        "desc": "Я увлекаюсь разработкой и люблю пробовать интересные технологии. <br> У меня есть <a1>Minectraft проект</a1> с модами, а также свой домашний сервер, на котором работает этот сайт, minecraft и ещё некоторые сервисы. <br>Недавно начал делать моды на <a1>Java</a1> для <a1>Minecraft</a1>. <br> Иногда делаю игры на <a1>Unity</a1> и учавствую в геймджемах. <br>Люблю <a1>VR</a1> игры."
     },
     "projects_title": "Проекты",
     "projects": [

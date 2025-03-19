@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/index_discord.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/theme_switch.css') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/0x5841524f4e/js-lanyard/lanyard.js"></script>
-
+    
     {{ moment.include_moment() }}
     {{ moment.locale(page_lang) }}
 </head>
@@ -21,6 +24,7 @@
 
     <header class="border">
         <span class="site_title">Zizazr</span>
+        <span class="page_lang">{{ page_lang }}</span>
         <div class="links">
             <a href="https://discord.com/users/zizazr" class="link link_discord">
                 {{ icon("discord", class="link_img") }}
@@ -34,8 +38,27 @@
             <a href="https://github.com/Zizazar" class="link link_github">
                 {{ icon("github", class="link_img")}}
             </a>
-            s
-w    </header>
+            <a href="https://zizazr.itch.io/" class="link link_itch">
+                {{ icon("itch", class="link_img")}}
+            </a>
+        </div>
+        <hr class="vertical" />
+        <div class="toggle_theme">
+            <i class="fa-solid fa-moon toggle_theme_img" aria-hidden="true"></i>
+        </div>
+        <script>
+            $('.toggle_theme').click(() => {
+                $('.toggle_theme .fa-solid').toggleClass('fa-sun fa-moon rotate');
+            });
+            $('.page_lang').click(() => {
+                jQuery.getJSON("{{ url_for('change_language', l=next_lang) }}", (data) => {
+                    document.cookie = 'lang=' + data.new
+                    location.reload()
+                })
+
+            })
+        </script>
+    </header>
     <main>
         <div class="content">
             <p class="about">
@@ -146,6 +169,7 @@ w    </header>
             </div>
         </div>
     </main>
-    <footer></footer>
+    <footer>
+    </footer>
 </body>
 </html>
