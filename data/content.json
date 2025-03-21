@@ -9,7 +9,7 @@
         {
             "name": "Floppa Land",
             "start_time": "21.02.2022",
-            "desc": "A <a1>Minecraft</a1> project with lots of mods and custom content. There is also a launcher based on <a href='https://gravitlauncher.com/' class='l'>Gravit Launcher</a>.",
+            "desc": "A <a1>Minecraft</a1> project with lots of mods and custom content. There is also a launcher based on <a href='https://gravitlauncher.com/' class='l'>Gravit Launcher <i class='fa-solid fa-arrow-up-right-from-square'></i></a>.",
             "links": [
                 {"icon": "github", "url": "https://github.com/FloppaLand"},
                 {"icon": "fl_mini", "url": "https://floppaland.fun"}
@@ -50,7 +50,7 @@
         "start_time": "2022-04-23"
     },{
         "name": "SQL",
-        "icon": "csharp",
+        "icon": "",
         "rang": "bad",
         "start_time": "2024-08-01"
     }],
@@ -61,6 +61,7 @@
         "start_time": "2024-03-28"
     },{
         "name": "Fast API",
+        "icon": "fastapi",
         "rang": "middle",
         "start_time": "2024-03-01"
     },{
@@ -88,5 +89,10 @@
         "icon": "postgres",
         "rang": "good",
         "start_time": "2024-03-01"
+    },{
+        "name": "Git",
+        "icon": "git",
+        "rang": "good",
+        "start_time": "2022-07-30"
     }]
 }

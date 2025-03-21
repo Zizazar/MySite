@@ -4,23 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Zizazr</title>
+    <title>Zizazr's bio</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/index_discord.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/mobile.css') }}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
+    <script src="{{ url_for('static', filename='scripts/star_particles.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/particles.js') }}"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/0x5841524f4e/js-lanyard/lanyard.js"></script>
+
     
     {{ moment.include_moment() }}
     {{ moment.locale(page_lang) }}
+
+    <meta property="og:title" content="Zizazr's bio" />
+    <meta property="og:description" content="Website about me" />
+    <meta property="og:url" content="https://zizazr.art/" />
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:locale:alternate" content="ru_RU">
+
 </head>
 
 <body>
+    <canvas id="stars"></canvas>
     {% from "icons.macro" import icon %}
-
     <header class="border">
         <div class="left_sector">
             <span class="site_title">Zizazr</span>

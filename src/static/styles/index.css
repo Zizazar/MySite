@@ -8,8 +8,8 @@
     --accent-color: #35e64d;
     --accent2-color: #a447e2;
     --accent3-color: linear-gradient(160deg, rgba(245,194,88,1) 0%, rgba(219,122,43,1) 65%, rgba(209,96,22,1) 100%);
-    --dark-color: #a0a0a0;
-    --border-color: #ffffff30;
+    --dark-color: #b6b6b6;
+    --border-color: #ffffff35;
     --link-color: #2e83d3;
     --link-hover-color: #69b0f1;
 }
@@ -49,7 +49,7 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    background-color: black;
+    background: radial-gradient(at top left, #1f3b55 25%, #05363b 55%, #000000 90%); 
     color: white;
     padding-left: 2rem;
     padding-right: 2rem;
@@ -150,6 +150,11 @@ footer {
     font-size: 18px;
     font-family: 'Courier New', Courier, monospace;
 }
+.left_sector {
+    display: flex;
+    align-items: center;
+}
+
 
 .title {
     font-size: 24px;
@@ -233,6 +238,7 @@ footer {
     width: 24px;
     height: 24px;
     vertical-align: middle;
+    border-radius: 5px;
 }
 .language_time {
     vertical-align: middle;
@@ -241,10 +247,10 @@ footer {
 }
 
 .rang_bad {
-    border-color: #ff000080;
+    border-color: #ff3333a0;
 }
 .rang_middle {
-    border-color: #ffff0090;
+    border-color: #ffff22a0;
 }
 .rang_good {
     border-color: #44ff0080;
@@ -280,6 +286,7 @@ hr.vertical {
 .page_lang {
     cursor: pointer;
     color: var(--link-color);
+    align-self:baseline;
 }
 .page_lang:hover {
     color: var(--link-hover-color);
@@ -288,3 +295,12 @@ hr.vertical {
 .hidden {
     display: none;
 }
+
+#stars {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -9999; 
+  }
