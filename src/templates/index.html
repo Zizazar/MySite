@@ -7,8 +7,7 @@
     <title>Zizazr</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/index_discord.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/icons.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/theme_switch.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/mobile.css') }}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
@@ -23,29 +22,33 @@
     {% from "icons.macro" import icon %}
 
     <header class="border">
-        <span class="site_title">Zizazr</span>
-        <span class="page_lang">{{ page_lang }}</span>
-        <div class="links">
-            <a href="https://discord.com/users/zizazr" class="link link_discord">
-                {{ icon("discord", class="link_img") }}
-            </a>
-            <a href="https://t.me/zizazr" class="link link_telegram">
-                {{ icon("telegram", class="link_img")}}
-            </a>
-            <a href="https://steamcommunity.com/id/zizazr/" class="link link_steam">
-                {{ icon("steam", class="link_img")}}
-            </a>
-            <a href="https://github.com/Zizazar" class="link link_github">
-                {{ icon("github", class="link_img")}}
-            </a>
-            <a href="https://zizazr.itch.io/" class="link link_itch">
-                {{ icon("itch", class="link_img")}}
-            </a>
+        <div class="left_sector">
+            <span class="site_title">Zizazr</span>
+            <span class="page_lang">{{ page_lang }}</span>
         </div>
-        <hr class="vertical" />
-        <div class="toggle_theme">
-            <i class="fa-solid fa-moon toggle_theme_img" aria-hidden="true"></i>
+        <div class="right_sector">
+            <div class="links">
+                <a href="https://discord.com/users/zizazr" class="link link_discord">
+                    {{ icon("discord", class="link_img") }}
+                </a>
+                <a href="https://t.me/zizazr" class="link link_telegram">
+                    {{ icon("telegram", class="link_img")}}
+                </a>
+                <a href="https://steamcommunity.com/id/zizazr/" class="link link_steam">
+                    {{ icon("steam", class="link_img")}}
+                </a>
+                <a href="https://github.com/Zizazar" class="link link_github">
+                    {{ icon("github", class="link_img")}}
+                </a>
+                <a href="https://zizazr.itch.io/" class="link link_itch">
+                    {{ icon("itch", class="link_img")}}
+                </a>
+            </div>
+            <div class="toggle_theme">
+                <i class="fa-solid fa-moon toggle_theme_img" aria-hidden="true"></i>
+            </div>
         </div>
+        
         <script>
             $('.toggle_theme').click(() => {
                 $('.toggle_theme .fa-solid').toggleClass('fa-sun fa-moon rotate');
@@ -72,14 +75,16 @@
                     {% for project in content.projects %}
                     <div class="project_item border">
                         <div class="project_header">
-                            <span class="project_name">{{project.name}}</span>
+                            <div class="project_info">
+                                <span class="project_name">{{project.name}}</span>
+                                <span class="project_started"><i class="fa-solid fa-calendar-days"></i> {{project.start_time}}</span>
+                            </div>
                             <div class="project_links">
                                 {% for link in project.links %}
                                 <a href="{{ link.url }}" class="project_link">{{ icon(link.icon, class="project_link_icon") }}</a>
                                 {% endfor %}
                             </div>
                         </div>
-                        <span class="project_started">Started at: {{project.start_time}}</span>
                         <span class="project_desc">{{project.desc|safe}}</span>
                     </div>
                     {% endfor %}
@@ -111,6 +116,8 @@
                     {% endfor %}
                 </div>
             </div>
+            <hr>
+            
         </div>
         <script>
             lanyard({
@@ -145,7 +152,7 @@
                 setInterval(() => {
                     data.activities.forEach(activity => {
                         var duration = moment.utc(moment().diff(activity.timestamps.start)).format("H:mm:ss");
-                        $(`.discord_activity_time[data-id='${activity.id}']`).text(duration)
+                        $(`.discord_activity_time[data-id='${activity.id}']`).html(duration)
                     });
                 }, 1000)
             }
@@ -158,12 +165,12 @@
                 </a>
                 <hr>
                 <div class="discord_status">
-                    <img src="https://cdn.discordapp.com/embed/avatars/0.png" alt="DS Avatar" class="discord_avatar">
                     <div class="discord_info">
+                        <img src="https://cdn.discordapp.com/embed/avatars/0.png" alt="DS Avatar" class="discord_avatar">
                         <span class="discord_name">Zizazr</span>
-                        <div class="discord_activities">
+                    </div>
+                    <div class="discord_activities">
                             
-                        </div>
                     </div>
                 </div>
             </div>

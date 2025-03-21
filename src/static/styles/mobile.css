@@ -1,0 +1,77 @@
+@media (max-width: 768px) {
+    body {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+    main {
+      grid-template-columns: 1fr;
+
+  }
+
+    .title{
+      font-size: 1.4rem;
+    }
+
+    
+    .projects_list {
+      justify-content: center;
+    }
+    .project_item {
+      width: 100%;
+    }
+    .project_link {
+
+    }
+
+    
+    .language_item {
+      font-size: 0.95rem;
+      gap: 5px;
+    }
+    .language_time {
+      font-size: 0.85rem;
+    }
+    .language_icon {
+      width: 16px;
+      height: 16px;
+      vertical-align: middle;
+    }
+
+    .discord_status {
+      min-width: 100%;
+    }
+    
+    .discord_activities {
+      flex-direction: row;
+      flex-wrap: wrap;
+      
+    }
+    .discord_activity {
+      max-width: fit-content;
+      padding-right: 1rem;
+    }
+  
+    header {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+    }
+
+    .right_sector {
+      margin: 0;
+      align-self: center;
+      border-top: 2px solid var(--border-color);
+    }
+    .toggle_theme {
+      display: none;
+    }
+    .site_title {
+      font-size: 1.5rem;
+      padding-left: 0.5rem;
+    }
+    .page_lang {
+      font-size: 16px;
+      vertical-align: top;
+    }
+    
+  }

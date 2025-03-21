@@ -1,7 +1,9 @@
 from src import app
-from flask import render_template, make_response, request, jsonify
+from flask import render_template, make_response, request, jsonify, url_for, send_file
 import json
 from src.utils import get_locale, update_json, get_next_lang
+import os
+import requests
 
 
 @app.route('/')
