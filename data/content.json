@@ -36,7 +36,7 @@
     },{
         "name": "Lua",
         "icon": "lua",
-        "rang": "middle",
+        "rang": "good",
         "start_time": "2022-04-23"
     },{
         "name": "JavaScript",
@@ -57,6 +57,7 @@
     "tools_title": "Tools / Frameworks",
     "tools": [{
         "name": "Flask",
+        "icon": "flask",
         "rang": "good",
         "start_time": "2024-03-28"
     },{
@@ -76,7 +77,7 @@
         "start_time": "2023-01-04"
     },{
         "name": "Unreal Engine",
-        "icon": "ue",
+        "icon": "unreal",
         "rang": "bad",
         "start_time": "2022-03-01"
     },{
@@ -94,5 +95,10 @@
         "icon": "git",
         "rang": "good",
         "start_time": "2022-07-30"
+    },{
+        "name": "Linux",
+        "icon": "linux",
+        "rang": "good",
+        "start_time": "2024-02-04"
     }]
 }
