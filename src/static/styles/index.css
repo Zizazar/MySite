@@ -49,7 +49,7 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    background: radial-gradient(at top left, #1f3b55 25%, #05363b 55%, #000000 90%); 
+    background: radial-gradient(at top left, #1f3b55 25%, #05363b 55%, #000000 90%) fixed;
     color: white;
     padding-left: 2rem;
     padding-right: 2rem;
