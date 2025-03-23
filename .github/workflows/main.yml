@@ -14,27 +14,40 @@ jobs:
       - name: "Checkout"
         uses: actions/checkout@v3
 
-      - name: "Stop Update Run"
-        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+      - name: "Stop running container"
+        uses: appleboy/ssh-action@v1
+        continue-on-error: true
         env:
-          FIRSTSSH: "STOP CONTAINER"
-          LASTSSH: "START UPDATED CONTAINER"
           WORKDIR: ${{ secrets.SERVER_WORKDIR }}
         with:
           host: ${{ secrets.SERVER_HOST }}
           user: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.ACTIONS_KEY }}
           port: ${{ secrets.SERVER_PORT }}
-          connect_timeout: 10s
+          script: |
+            cd $WORKDIR
+            docker compose down
+            
+      - name: "Copy repository to server"
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          user: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.ACTIONS_KEY }}
+          port: ${{ secrets.SERVER_PORT }}
+          source: "."
+          target: ${{ secrets.SERVER_WORKDIR }}
 
-          first_ssh: |
-            echo $WELCOME &&
-            cd $WORKDIR &&
-            docker compose down || true &&
-            echo CONTAINER STOPING ERROR or ALREADY STOPPED
-          scp: |
-            . => $WORKDIR
-          last_ssh: |
-            echo $LASTSSH && 
+      - name: "Build and start container"
+        uses: appleboy/ssh-action@v1
+        env:
+          WORKDIR: ${{ secrets.SERVER_WORKDIR }}
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          user: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.ACTIONS_KEY }}
+          port: ${{ secrets.SERVER_PORT }}
+          script: |
+            cd $WORKDIR
             docker compose build &&
             docker compose up
