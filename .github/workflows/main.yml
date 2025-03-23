@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: "Stop running container"
-        uses: appleboy/ssh-action@v1
+        uses: appleboy/ssh-action@v0.1.5
         continue-on-error: true
         env:
           WORKDIR: ${{ env.SERVER_WORKDIR }}
@@ -38,7 +38,7 @@ jobs:
           target: ${{ env.SERVER_WORKDIR }}
 
       - name: "Build and start container"
-        uses: appleboy/ssh-action@v1
+        uses: appleboy/ssh-action@v0.1.5
         env:
           WORKDIR: ${{ env.SERVER_WORKDIR }}
         with:
