@@ -30,7 +30,7 @@ jobs:
           first_ssh: |
             echo $WELCOME &&
             cd $WORKDIR &&
-            docker compose down ||
+            docker compose down || true &&
             echo CONTAINER STOPING ERROR or ALREADY STOPPED
           scp: |
             . => $WORKDIR
