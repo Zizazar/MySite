@@ -22,7 +22,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.ACTIONS_KEY }}
           port: ${{ secrets.SERVER_PORT }}
-          script: cd ${{ env.SERVER_WORKDIR }} && ls -a && docker compose down
+          script: echo "${{ env.SERVER_WORKDIR }}" && cd "${{ env.SERVER_WORKDIR }}" && ls -a && docker compose down
             
       - name: "Copy repository to server"
         uses: appleboy/scp-action@v0.1.7
@@ -41,4 +41,4 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.ACTIONS_KEY }}
           port: ${{ secrets.SERVER_PORT }}
-          script: cd ${{ env.SERVER_WORKDIR }} && ls -a && docker compose build && docker compose up -d
+          script: echo "${{ env.SERVER_WORKDIR }}" && cd "${{ env.SERVER_WORKDIR }}" && ls -a && docker compose build && docker compose up -d
