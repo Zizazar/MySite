@@ -1,0 +1,62 @@
+name: "Deploy to server"
+
+on:
+  workflow_dispatch:
+  
+  push:
+    branches:
+      - main
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v3
+
+      - name: "Stop running container"
+        uses: appleboy/ssh-action@v0.1.5
+        continue-on-error: true
+        env:
+          FOO: "BAR"
+          WORKDIR: ${{ vars.SERVER_WORKDIR }}
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.ACTIONS_KEY }}
+          port: ${{ secrets.SERVER_PORT }}
+          envs: WORKDIR, FOO
+          script: |
+            # 
+            echo $WORKDIR
+            echo $FOO
+            cd $WORKDIR
+            ls -a
+            docker compose down
+            
+      - name: "Copy repository to server"
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.ACTIONS_KEY }}
+          port: ${{ secrets.SERVER_PORT }}
+          source: "."
+          target: ${{ vars.SERVER_WORKDIR }}
+
+      - name: "Build and start container"
+        uses: appleboy/ssh-action@v0.1.5
+        env:
+          WORKDIR: ${{ vars.SERVER_WORKDIR }}
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.ACTIONS_KEY }}
+          port: ${{ secrets.SERVER_PORT }}
+          envs: WORKDIR
+          script: |
+            echo $WORKDIR
+            cd $WORKDIR
+            ls -a 
+            docker compose build 
+            docker compose up -d
