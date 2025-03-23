@@ -49,5 +49,5 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           script: |
             cd $WORKDIR
-            docker compose build &&
-            docker compose up
+            docker compose build
+            docker compose up -d
