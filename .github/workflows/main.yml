@@ -17,8 +17,8 @@ jobs:
       - name: "Stop Update Run"
         uses: cross-the-world/ssh-scp-ssh-pipelines@latest
         env:
-          FIRSTSSH: "Stop container"
-          LASTSSH: "Start updated container"
+          FIRSTSSH: "STOP CONTAINER"
+          LASTSSH: "START UPDATED CONTAINER"
           WORKDIR: ${{ secrets.SERVER_WORKDIR }}
         with:
           host: ${{ secrets.SERVER_HOST }}
@@ -30,7 +30,8 @@ jobs:
           first_ssh: |
             echo $WELCOME &&
             cd $WORKDIR &&
-            docker compose down 
+            docker compose down ||
+            echo CONTAINER STOPING ERROR or ALREADY STOPPED
           scp: |
             . => $WORKDIR
           last_ssh: |
