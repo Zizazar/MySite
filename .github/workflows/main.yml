@@ -26,8 +26,8 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           envs: WORKDIR
           script: |
-            echo ${{ env.SERVER_WORKDIR }}
-            cd ${{ env.SERVER_WORKDIR }}
+            echo $WORKDIR
+            cd $WORKDIR
             ls -a
             docker compose down
             
@@ -52,8 +52,8 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           envs: WORKDIR
           script: |
-            echo ${{ env.SERVER_WORKDIR }}
-            cd ${{ env.SERVER_WORKDIR }}
+            echo $WORKDIR
+            cd $WORKDIR
             ls -a 
             docker compose build 
             docker compose up -d
