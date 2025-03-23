@@ -1,3 +1,4 @@
 flask
 flask-moment
-flask-babel
+gunicorn
+requests
