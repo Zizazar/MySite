@@ -84,7 +84,7 @@
                 <span class="title">{{ content.projects_title }}</span>
                 <div class="projects_list">
                     {% for project in content.projects %}
-                    <div class="project_item border">
+                    <div class="project_item blur border">
                         <div class="project_header">
                             <div class="project_info">
                                 <span class="project_name">{{project.name}}</span>
@@ -106,7 +106,7 @@
                 <span class="title">{{ content.languages_title }}</span>
                 <div class="languages_list">
                     {% for lang in content.languages %}
-                    <div class="language_item border rang_{{ lang.rang }}">
+                    <div class="language_item blur border rang_{{ lang.rang }}">
                         {{ icon(lang.icon, class="language_icon") }}
                         <span class="language_name">{{ lang.name }}</span>
                         <span class="language_time">{{ moment(lang.start_time).fromNow(true) }}</span>
@@ -119,7 +119,7 @@
                 <span class="title">{{ content.tools_title }}</span>
                 <div class="languages_list">
                     {% for tool in content.tools %}
-                    <div class="language_item border rang_{{ tool.rang }}">
+                    <div class="language_item blur border rang_{{ tool.rang }}">
                         {{ icon(tool.icon, class="language_icon") }}
                         <span class="language_name">{{ tool.name }}</span>
                         <span class="language_time">{{ moment(tool.start_time).fromNow(true) }}</span>
@@ -156,9 +156,6 @@
                         )
                     ))
                 });
-                
-                
-
 
                 setInterval(() => {
                     data.activities.forEach(activity => {
@@ -166,11 +163,16 @@
                         $(`.discord_activity_time[data-id='${activity.id}']`).html(duration)
                     });
                 }, 1000)
+                setInterval(() => {
+                    $('.local_date').html(moment().utcOffset(3).format("dddd, MMMM Do YYYY"))
+                    $('.local_time').html(moment().utcOffset(3).format("H:mm:ss"))
+                }, 500)
+                $('.local_time_sector')
             }
 
         </script>
         <div class="sidebar">
-            <div class="discord_sector border">
+            <div class="discord_sector border blur">
                 <a class="discord_label"  href="https://discord.com/users/zizazr">
                     {{ icon("discord") }} Discord
                 </a>
@@ -184,6 +186,12 @@
                             
                     </div>
                 </div>
+            </div>
+            <div class="local_time_sector border blur">
+                <span class="local_time_title"><i class="fa-regular fa-clock"></i> {{ content.local_time_title }}</span>
+                <hr>
+                <span class="local_time"></span>
+                <span class="local_date"></span>
             </div>
         </div>
     </main>

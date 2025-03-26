@@ -4,6 +4,9 @@
         "desc": "I'am 17 years old developer who likes to explore interesting technologies and projects. <br> Own a <a1>Minecraft server</a1>, host it, and create mods. <br> Sometimes making space-related games. <br> Love playing with <a1>VR</a1>."
     },
     "discord_id": "669963214544437278",
+
+    "local_time_title": "Local Time (MSK)",
+
     "projects_title": "Projects",
     "projects": [
         {
@@ -14,11 +17,6 @@
                 {"icon": "github", "url": "https://github.com/FloppaLand"},
                 {"icon": "fl_mini", "url": "https://floppaland.fun"}
             ]
-        },
-        {
-            "name": "test",
-            "start_time": "2025-03-21",
-            "desc": "testtesttesttest test tteettsstt test test"
         }
     ],
 
